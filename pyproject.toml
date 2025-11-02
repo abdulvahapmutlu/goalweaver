@@ -37,9 +37,10 @@ goalweaver = "goalweaver.cli:app"
 [project.urls]
 Homepage = "https://github.com/abdulvahapmutlu/goalweaver"
 
+# ---- Packaging: make discovery explicit ----
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["goalweaver*"]
+include = ["goalweaver*", "gw_code*"]
 
 # ---------- Tooling ----------
 [tool.black]
@@ -55,13 +56,13 @@ select = ["E", "F", "I", "UP", "B", "SIM", "PL"]
 
 [tool.ruff.lint.per-file-ignores]
 "goalweaver/cli.py" = ["B008"]
-"tests/*.py" = ["PLR2004"]  # also quiet magic-value checks in tests
+"tests/*.py" = ["PLR2004"]
 
 [tool.mypy]
 python_version = "3.11"
 explicit_package_bases = true
 namespace_packages = true
-exclude = "^(code|tests)/"   # don't type-check generated code or tests via the hook
+exclude = "^(code|tests)/"
 
 [[tool.mypy.overrides]]
 module = ["networkx", "matplotlib", "matplotlib.*", "streamlit"]
