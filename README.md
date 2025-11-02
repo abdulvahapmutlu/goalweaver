@@ -2,9 +2,11 @@
 
 GoalWeaver is a compact, production-grade toolkit for **agentic AI**. It turns high-level objectives into a **DAG of goals**, schedules them adaptively, routes each goal to the right **agent**, and **persists** progress so you can **visualize** the run in real time.
 
-[![CI](https://github.com/abdulvahapmutlu/goalweaver/actions/workflows/ci.yml/badge.svg)](https://github.com/abdulvahapmutlu/goalweaver/actions/workflows/ci.yml)
-[![Release](https://github.com/abdulvahapmutlu/goalweaver/actions/workflows/release.yml/badge.svg)](https://github.com/abdulvahapmutlu/goalweaver/actions/workflows/release.yml)
-[![PyPI](https://img.shields.io/pypi/v/goalweaver.svg)](https://pypi.org/project/goalweaver/)
+[![ci](https://img.shields.io/github/actions/workflow/status/<OWNER>/<REPO>/release.yml?branch=main&label=ci)](https://github.com/<OWNER>/<REPO>/actions/workflows/release.yml)
+[![release](https://img.shields.io/github/v/tag/<OWNER>/<REPO>?label=release)](https://github.com/<OWNER>/<REPO>/releases)
+
+[![PyPI - Version](https://img.shields.io/pypi/v/goalweaver?label=pypi&cacheSeconds=300&v=1)](https://pypi.org/project/goalweaver/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/goalweaver)](https://pypi.org/project/goalweaver/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 - ⚙️ **Core**: DAG planner, orchestrator, memory, typed agents & tools  
@@ -289,3 +291,4 @@ Includes:
 This project is licensed under MIT.
 
 ---
+
