@@ -1,0 +1,44 @@
+# ---- Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+*.so
+
+# ---- Packaging / build
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ---- Virtual envs
+.venv/
+venv/
+env/
+ENV/
+
+# ---- Tool caches
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.cache/
+.ipynb_checkpoints/
+
+# ---- Coverage
+.coverage*
+htmlcov/
+
+# ---- IDE/OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ---- Project runtime/state
+state.json
+artifacts/
+*.log
+
+# ---- Streamlit
+.streamlit/secrets.toml
+.streamlit/*.yaml

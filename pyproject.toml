@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "goalweaver"
+version = "0.1.0"
+description = "Adaptive goal planner for multi-agent systems"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Abdulvahap Mutlu", email = "abdulvahapmutlu1@gmail.com" }]
+
+dependencies = [
+  "pydantic>=2.7",
+  "networkx>=3.2",
+  "typer[all]>=0.12",
+]
+
+[project.optional-dependencies]
+viz = [
+  "streamlit>=1.36",
+  "matplotlib>=3.8",
+  "plotly>=6.3.1",
+]
+dev = [
+  "ruff>=0.6.8",
+  "black>=24.8.0",
+  "mypy>=1.11.2",
+  "pytest>=7.4",
+  "pre-commit>=3.7.0",
+]
+
+[project.scripts]
+goalweaver = "goalweaver.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/abdulvahapmutlu/goalweaver"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["goalweaver*"]
+
+# ---------- Tooling ----------
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "PL"]
+
+[tool.ruff.lint.per-file-ignores]
+"goalweaver/cli.py" = ["B008"]
+"tests/*.py" = ["PLR2004"]  # also quiet magic-value checks in tests
+
+[tool.mypy]
+python_version = "3.11"
+explicit_package_bases = true
+namespace_packages = true
+exclude = "^(code|tests)/"   # don't type-check generated code or tests via the hook
+
+[[tool.mypy.overrides]]
+module = ["networkx", "matplotlib", "matplotlib.*", "streamlit"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+norecursedirs = [".venv", "venv", "build", "dist", ".git", "node_modules"]
